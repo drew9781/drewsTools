@@ -1,0 +1,7 @@
+nodes:
+  - pve
+  - pve2
+  - pve3
+
+vms:
+  - all

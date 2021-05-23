@@ -1,14 +1,7 @@
+from drewsTools.l0 import proxmox
 from drewsTools.l0 import functions
 
-proxmoxApiCreds = "secrets/proxmoxApi.json"
+Proxmox = proxmox.Proxmox()
 
-creds = functions.getCreds(filename=proxmoxApiCreds)
-try:
-    proxmoxHost = creds['proxmoxHost']
-    user        = creds['user']
-    secret      = creds['pass']
-
-except:
-    #didnt find file
-    raise Exception("failed to read file "+filename)
-
+for vm in Proxmox.connection.cluster.resources.get(type='vm'):
+    print(vm)
