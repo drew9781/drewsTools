@@ -39,14 +39,14 @@ class Proxmox():
     # VMs
 
     def getVms(self):
-        return self.connnection.cluster.resources.get(type='vm')
+        return self.connection.cluster.resources.get(type='vm')
 
     # Status types:
     #   reboot reset resume shudown start stop suspend
     def setVmPowerStatus(self, node, vmId, status):
-        return self.connnection.post('nodes/%s/qemu/%s/status/%s' % (node, vmId, status))
+        return self.connection.nodes(node).qemu(vmId).status(status).post()
 
-    def getVmPowerStatus(self, node, vmId, status):
-        return self.connnection.get('nodes/%s/qemu/%s/status/%s' % (node, vmId, status))
+    def getVmPowerStatus(self, node, vmId):
+        return self.connection.nodes(node).qemu(vmId).status.current.get()
 
         
