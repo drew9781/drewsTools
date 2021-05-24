@@ -1,0 +1,11 @@
+nodes:
+  - pve2
+  - pve3
+
+vms:
+  - ns01.internal.aenglema.com
+  - cds.internal.aenglema.com
+  - DNSmaster
+  - postgres-master.internal.aenglema.com
+  - icinga.internal.aenglema.com
+  - MediaServer
