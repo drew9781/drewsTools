@@ -9,6 +9,9 @@ def migrateVm(vm, allowedNodes=[]):
 
     # if no space evacuate some not-needed VMs
 
+
+
+
 # returns node stats and candidate list
 # {
 #     'nodeName' :{
@@ -57,3 +60,5 @@ def getNodeCandidateList(allowedNodes=[]):
     nodeStats['candidateList'] = candidateList
     return nodeStats 
 
+def validateVmToCandidate():
+    Proxmox=proxmox.Proxmox()
